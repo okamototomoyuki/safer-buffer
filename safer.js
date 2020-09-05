@@ -10,7 +10,7 @@ var safer = {}
 var key
 
 for (key in buffer) {
-  if (!buffer.hasOwnProperty(key)) continue
+  if (buffer.hasOwnProperty != null && !buffer.hasOwnProperty(key)) continue
   if (key === 'SlowBuffer' || key === 'Buffer') continue
   safer[key] = buffer[key]
 }
